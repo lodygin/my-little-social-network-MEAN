@@ -1,0 +1,13 @@
+<div>
+  <h2 mat-dialog-title>Update your photo</h2>
+
+  <div>
+    <input type="file" hidden #inputImg (change)="onFileUpload($event)">
+  </div>
+  <div *ngIf="imagePreview">
+    <img class="add-img" [src]="imagePreview">
+  </div>
+  <mat-dialog-actions>
+    <button (click)="triggerClick()" color="basic" mat-flat-button type="button">Add Image</button>
+  </mat-dialog-actions>
+</div>

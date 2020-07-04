@@ -1,0 +1,47 @@
+mat-toolbar {
+  justify-content: center;
+}
+
+.site {
+  &__list {
+    display: flex;
+    height: 100%;
+  }
+
+  &__item {
+    height: 100%;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 80px;
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+  }
+
+  &__container {
+    max-width: 992px;
+    margin: 0 auto;
+  }
+
+  &__row {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 -10px;
+  }
+
+  &__feed {
+    flex-grow: 1;
+    padding: 0 10px;
+  }
+
+  &__profile {
+    flex: 0 0 300px;
+    padding: 0 10px;
+  }
+}

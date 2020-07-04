@@ -1,0 +1,19 @@
+<mat-card *ngIf="currentUser; else empty">
+  <img mat-card-image src="{{currentUser.imageSrc || 'assets/emptyImgProfile.jpg'}}" alt="Profile Photo">
+  <mat-card-header>
+    <mat-card-title>
+      <p>{{currentUser.nickname}}</p>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-actions>
+    <button (click)="onSetImage()" mat-stroked-button color="primary" style="width: 100%">Update your photo</button>
+  </mat-card-actions>
+</mat-card>
+
+<ng-template #empty>
+  <mat-card>
+    <div style="height: 354px">
+      <app-loader></app-loader>
+    </div>
+  </mat-card>
+</ng-template>

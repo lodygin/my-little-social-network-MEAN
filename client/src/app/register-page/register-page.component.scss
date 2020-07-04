@@ -1,0 +1,28 @@
+.auth {
+  max-width: 400px;
+  padding: 20px 20px 84px;
+  min-height: calc(100% - 64px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__title {
+    font-weight: 300;
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 0.8em;
+  }
+
+  &__btn-filed {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  mat-form-field {
+    margin: 5px 0;
+    width: 100%;
+  }
+}

@@ -1,0 +1,43 @@
+<div>
+  <h2 mat-dialog-title>New post</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-dialog-content>
+      <mat-form-field>
+        <mat-label>Title</mat-label>
+        <input matInput type="text" formControlName="title">
+        <mat-error *ngIf="form.get('title').hasError('required')">
+          Title is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Content</mat-label>
+        <textarea matInput type="text" formControlName="content"></textarea>
+        <mat-error *ngIf="form.get('content').hasError('required')">
+          Content is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <input type="file" hidden #inputImg (change)="onFileUpload($event)">
+      </div>
+      <div *ngIf="imagePreview">
+        <img class="add-img" [src]="imagePreview">
+      </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+      <div>
+        <button (click)="triggerClick()" color="basic"
+                [disabled]="form.invalid || form.disabled"
+                mat-flat-button type="button"
+        >Add Image</button>
+
+        <button color="accent"
+                [disabled]="form.invalid || form.disabled"
+                mat-flat-button type="submit"
+        >Create Post</button>
+      </div>
+    </mat-dialog-actions>
+  </form>
+</div>
+

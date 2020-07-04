@@ -1,0 +1,34 @@
+<mat-toolbar color="primary">
+  <ul class="site__list">
+    <li class="site__item">
+      <button (click)="addPost()" mat-flat-button class="site__link" color="primary" aria-label="add">
+        <mat-icon>add</mat-icon>
+      </button>
+    </li>
+    <li class="site__item">
+      <a mat-flat-button class="site__link" routerLink="/home" color="primary">
+        <mat-icon>home</mat-icon>
+      </a>
+    </li>
+    <li class="site__item">
+      <button mat-flat-button class="site__link" color="primary">
+        <mat-icon>notifications</mat-icon>
+      </button>
+    </li>
+    <li class="site__item">
+      <button (click)="logout()" mat-flat-button class="site__link" color="primary">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </li>
+  </ul>
+</mat-toolbar>
+<div class="site__container">
+  <div class="site__row">
+    <div class="site__feed">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="site__profile">
+      <app-profile-page></app-profile-page>
+    </div>
+  </div>
+</div>
